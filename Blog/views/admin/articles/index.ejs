@@ -1,0 +1,56 @@
+<%- include ('../../partials/header.ejs') %>
+<%- include ('../../partials/navbar.ejs') %>
+<div class="container">
+    <hr>
+    <h2>Artigos</h2>
+    <a class="btn btn-success" href="/admin/articles/new">Criar novo Artigo</a>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Slug</th>
+                <th>Categoria</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% articles.forEach(articles => { %>
+            <tr>
+                
+                <td><%= articles.id %></td>
+                <td><%= articles.title %></td>
+                <td><%= articles.slug %></td>
+                <td><%= articles.category.title %></td>
+                <td>
+                 <!-- Cria um form para ele pegar o id e postar para deletar utilizando a rota
+                -->
+                    <form method="POST" action="/articles/delete" style="display: inline;" onsubmit="confirmarDelete(event, this)">
+                        <input type="hidden" name="id" value="<%= articles.id %>">
+                        <button class="btn btn-danger">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+
+            <%  }) %>
+
+        </tbody>
+    </table>
+
+
+</div>
+<script>
+    function confirmarDelete(event, form){
+        event.preventDefault();
+        //confirm retornar true ou false
+       var decisao = confirm("Você deseja deletar este artigo?")
+       if(decisao){
+        form.submit()
+       }else
+       {
+
+       }
+    }
+</script>
+<%- include ('../../partials/footer.ejs') %>

@@ -1,0 +1,15 @@
+{
+  "name": "guiaconverter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Processor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "html-pdf": "^2.2.0"
+  }
+}

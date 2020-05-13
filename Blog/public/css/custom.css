@@ -1,0 +1,9 @@
+.navbar.custom {
+    height: 30px;  
+    font-size: smaller;
+    margin: 0 auto;
+    align-items: center;
+  justify-content: center;
+     }
+
+     .navbar {min-height:30px !important;}
