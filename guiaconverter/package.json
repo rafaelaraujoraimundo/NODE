@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.0.2",
-    "html-pdf": "^2.2.0"
+    "html-pdf": "^3.0.1"
   }
 }
